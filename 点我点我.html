@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from minmaxia.com/clickpocalypse/ by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 05 Dec 2014 13:47:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=ISO-8859-1"><!-- /Added by HTTrack -->
+<head>
+    <link rel="icon"
+          type="image/x-icon"
+          href="favicon.ico">
+    <meta charset="utf-8">
+    <!--<meta name="description" content="Procedural Incremental Game"/>-->
+    <title>末日危机</title>
+    <link rel="stylesheet" type="text/css" href="clickpocalypse491c.css?ver=20140713">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '././analytics.js', 'ganal');
+
+        ganal('create', 'UA-41541662-1', 'minmaxia.com');
+        ganal('send', 'pageview');
+    </script>
+</head>
+<body>
+
+<div class="outerContainer">
+<a href="http://www.u77.com/" target="_blank"><img src="U77logo.png" ></a>
+<a href="http://shang.qq.com/wpa/qunwpa?idkey=73eb5a82f38f3d8f551a5729f21250ea2e3a28489765b053e4ff3f3263301fa0/" target="_blank"><img src="lylogo.png" ></a>
+<div class="mainTitle">末日危机</div>
+
+<table>
+<tr>
+<!-- Left side of the screen. -->
+<td style="vertical-align: top; min-width:570px;">
+<div class="tabMenu">
+    <ul>
+        <li id="mainTab" class="selectedTab"><a href="#" onclick="Game.displayEncounterTab(); return false;">游戏</a></li>
+        <li id="machinePartsTab" style="display:none;"><a href="#" onclick="Game.displayMachinePartsTab(); return false;">零件</a></li>
+        <li id="artifactsTab" style="display:none;"><a href="#" onclick="Game.displayArtifactsTab(); return false;">上古神器</a></li>
+        <li id="questsTab" style="display:none;"><a href="#" onclick="Game.displayQuestsTab(); return false;">任务</a></li>
+        <li id="defeatedBossesTab" style="display:none;"><a href="#" onclick="Game.displayDefeatedBossesTab(); return false;">首领</a></li>
+        <li id="championsTab" style="display:none;"><a href="#" onclick="Game.displayChampionsTab(); return false;">冠军</a></li>
+        <li id="partyManagementTab"><a href="#" onclick="Game.displayManagementTab(); return false;">管理</a></li>
+        <li id="versionTab"><a href="#" onclick="Game.displayVersionTab(); return false;">信息</a></li>
+    </ul>
+</div>
+
+<div class="tabContent">
+<div id="mainTabContainer" style="padding:0;margin:0">
+    <div id="dungeon_container" class="sectionDiv" style="padding-bottom:10px;"></div>
+
+    <div id="boss_lair_container" class="sectionDiv" style="padding-bottom:10px;display:none;"></div>
+
+    <div id="encounterContainer" class="sectionDiv" style="padding-bottom:10px;">
+        <div class="sectionTitle">一次遭遇战!</div>
+
+        <div id="encounter_name" class="monsterName"></div>
+        <div id="boss_job_title_storyline" class="bossJobTitleStoryline" style="display:none;"></div>
+        <div id="boss_job_title_non_storyline" class="bossJobTitle" style="display:none;"></div>
+        <div id="boss_encounter_name" class="bossMonsterName" style="display:none;"></div>
+
+        <div class="combatProgressBar">
+            <div id="encounter_progress" class="combatProgressPercentage" style="width:34%;"></div>
+        </div>
+
+        <div style="text-align:center;margin:0;">
+            <!-- invoke 'preventDefault' to remove the enter key bug. -->
+            <a href="#" class="attackButton" onkeypress="if (event.preventDefault) {event.preventDefault();}" onclick="Game.onAttackButtonPress(); return false;"
+               title="点击攻击杀死敌人.">攻击</a>
+        </div>
+    </div>
+
+    <div id="machine_part_container" class="sectionDiv" style="padding-bottom:10px;display:none;"></div>
+
+    <div id="treasure_chest_container" class="sectionDiv" style="padding-bottom:10px;display:none;"></div>
+
+    <div id="artifact_container" class="sectionDiv" style="padding-bottom:10px;display:none;"></div>
+
+    <div id="quest_container" class="sectionDiv" style="padding-bottom:10px;display:none;"></div>
+
+    <div id="quest_complete_container" class="sectionDiv" style="padding-bottom:10px;display:none;"></div>
+
+    <div id="encountered_character_container" class="sectionDiv" style="padding-bottom:10px;display:none;"></div>
+
+    <div class="sectionDiv">
+        <div id="item_drop_container"></div>
+        <div id="item_cache_container"></div>
+    </div>
+</div>
+
+<div id="machinePartsTabContainer" class="sectionDiv" style="display:none;"></div>
+<div id="artifactsTabContainer" class="sectionDiv" style="display:none;">
+    <div id="artifact_effects_container"></div>
+    <div id="artifact_collection_container"></div>
+</div>
+<div id="questsTabContainer" class="sectionDiv" style="display:none;">
+    <div id="active_quests_container"></div>
+    <div id="completed_quests_container"></div>
+</div>
+<div id="defeatedBossesTabContainer" class="sectionDiv" style="display:none;"></div>
+<div id="championsTabContainer" class="sectionDiv" style="display:none;">
+    <div id="prestige_info_container"></div>
+    <div id="champions_table_container"></div>
+</div>
+<div id="partyManagementTabContainer" class="sectionDiv" style="display:none;">
+    <div id="party_management_container" class="sectionDiv" style="padding-bottom:10px;"></div>
+</div>
+
+<div id="versionTabContainer" style="padding:0;margin:0;display:none;">
+<div id="saveContainer" class="sectionDiv" style="padding-bottom:10px;">
+    <div class="sectionTitle">保存</div>
+
+    <div class="saveButtonContainer">
+        <a href="#" class="saveButton" style="float:left;" onclick="Game.onSaveGameButtonPress(); return false;"
+           title="保存当前进度.本游戏会定时自动保存.">保存游戏</a>
+
+        <div id="lastSaveDiv" class="buttonNoteDiv">最后一次保存: 从未</div>
+    </div>
+
+    <div id="firstResetButtonContainer" class="saveButtonContainer">
+        <a href="#" class="saveButton" style="float:left;"
+           onclick="Game.onFirstResetGameButtonPress(); return false;"
+           title="完全重新开始游戏.没有奖金.从1级开始,没有黄金.">重置游戏</a>
+
+        <div class="buttonNoteDiv">从头开始(这并不会删除“声望”数据).</div>
+    </div>
+    <div id="resetConfirmContainer" class="exportImportSaveContainer" style="margin-bottom:5px;">
+        <div>你确定你想删除你所有的进度来重新开始?</div>
+        <div>这是强制复位,不保留奖励和加成.</div>
+        <div>注释:这不会重置声望数据(如果适用).</div>
+
+        <a href="#" class="saveButton" style="margin-top:5px; float:left;"
+           onclick="Game.onResetGameButtonPress(); return false;"
+           title="完全重新开始游戏.没有奖金.从1级开始,没有黄金.">重置游戏</a>
+
+        <a href="#" class="saveButton" style="margin-top:5px; margin-left:5px; float:left;"
+           onclick="Game.onResetCloseButtonPress(); return false;">关闭
+        </a>
+    </div>
+
+    <div id="firstDeleteSaveButtonContainer" class="saveButtonContainer">
+        <a href="#" class="saveButton" style="float:left;"
+           onclick="Game.onFirstDeleteSaveButtonPress(); return false;"
+           title="这将彻底删除你的所有进度,你将完全从头开始.">删除存档</a>
+
+        <div class="buttonNoteDiv">删除你所有的进度,包括'声望'数据.</div>
+    </div>
+    <div id="deleteSaveConfirmContainer" class="exportImportSaveContainer" style="margin-bottom:5px;">
+        <div>浙江删除你所有进度,包括'声望'(冠军)数据.</div>
+        <div style="font-weight:bold;">建议您先导出存档再进行此操作.</div>
+
+        <a href="#" class="saveButton" style="margin-top:5px; float:left;"
+           onclick="Game.onDeleteSaveButtonPress(); return false;"
+           title="完全重新开始游戏.">删除存档</a>
+
+        <a href="#" class="saveButton" style="margin-top:5px; margin-left:5px; float:left;"
+           onclick="Game.onDeleteCloseButtonPress(); return false;">关闭
+        </a>
+    </div>
+
+    <div class="saveButtonContainer">
+        <a href="#" id="exportSaveButton" class="saveButton"
+           onclick="Game.onExportSaveButtonPress(); return false;"
+           title="让你可以复制你的进度到剪切板.">导出存档</a>
+    </div>
+    <div id="exportSaveContainer" class="exportImportSaveContainer">
+        <label for="exportSaveInput">复制/粘贴来导出:</label>
+        <input id="exportSaveInput" style="width:450px;margin-top:5px;" type="text">
+
+        <div>
+            <a href="#" class="saveButton" style="margin-top:5px;"
+               onclick="Game.onExportCloseButtonPress(); return false;">关闭
+            </a>
+        </div>
+    </div>
+
+    <div class="saveButtonContainer">
+        <a href="#" id="importSaveButton" class="saveButton"
+           onclick="Game.onImportSaveButtonPress(); return false;">导入存档</a>
+    </div>
+    <div id="importSaveContainer" class="exportImportSaveContainer">
+        <label for="importSaveInput">粘贴已导出的存档进行导入:</label>
+        <input id="importSaveInput" style="width:450px;margin-top:5px;" type="text">
+
+        <div id="importErrorMessage" style="font-weight:bold; color:red; display:none;">错误: 无效存档数据.
+        </div>
+        <div id="importSuccessMessage" style="font-weight:bold; color:green; display:none;">成功导入存档.
+        </div>
+        <div>
+            <a href="#" class="saveButton" style="margin-top:5px; float:left;"
+               onclick="Game.onImportOkButtonPress(); return false;">导入
+            </a>
+            <a href="#" class="saveButton" style="margin-top:5px; margin-left:5px; float:left;"
+               onclick="Game.onImportCloseButtonPress(); return false;">关闭
+            </a>
+        </div>
+    </div>
+
+    <div id="prestigeButtonContainer" class="saveButtonContainer" style="display:none;"></div>
+    <div id="prestigeConfirmationContainer" class="exportImportSaveContainer" style="display:none;"></div>
+</div>
+<div id="miscContainer" class="sectionDiv" style="padding-bottom:10px;">
+    <div class="sectionTitle">杂项</div>
+
+    <p>
+        联系作者 <a href="mailto:contact@minmaxia.com">contact@minmaxia.com</a>
+    </p>
+
+    <p>
+        看看我们正在开发的WebGL游戏 <a href="http://www.minmaxia.com/" target="_blank">迷你马克西</a>!
+    </p>
+
+    <p>
+        参与我们的论坛讨论: <a href="http://www.reddit.com/r/CLICKPOCALYPSE/"
+                                   target="_blank">/r/CLICKPOCALYPSE</a>!
+    </p>
+	<a href="http://www.u77.com/" target="_blank"><img src="U77logo.png" ></a>
+	<p>
+		U77总有好游戏: <a href="http://www.u77.com/" target="_blank">U77欢迎您</a>
+	</p>
+	<a href="http://shang.qq.com/wpa/qunwpa?idkey=73eb5a82f38f3d8f551a5729f21250ea2e3a28489765b053e4ff3f3263301fa0/" target="_blank"><img src="U77lynew.png" ></a>
+	<p>
+		U77乐译汉化组<a href="http://shang.qq.com/wpa/qunwpa?idkey=73eb5a82f38f3d8f551a5729f21250ea2e3a28489765b053e4ff3f3263301fa0/" target="_blank">期待你的加入</a>
+	</p>
+</div>
+<div id="versionContainer" class="sectionDiv" style="padding-bottom:10px;">
+    <div class="sectionTitle">更新历史</div>
+
+    <p>
+        版本号 0.016 队伍管理 [2014/7/13]
+    </p>
+    <ul>
+        <li>增加'管理'(人员管理)标签,让你可以设置出战人员.</li>
+        <li>在队伍统计面板添加总计CPS和点击伤害信息.</li>
+        <li>添加一些角色信息.</li>
+    </ul>
+    <p>
+        版本号 0.015 单英雄开局和便利按钮 [2014/7/7]
+    </p>
+    <ul>
+        <li>开局只有一名角色,其他角色在游戏中找到.</li>
+        <li>一些神器在使用'声望'系统后可以保留.</li>
+        <li>添加一件装备所有掉落道具.</li>
+        <li>添加一键激活所有能力.</li>
+        <li>添加一键购买商店物品,根据价值排序(ΔCPS/黄金).</li>
+    </ul>
+    <p>
+        版本号 0.014 任务和上古神器 [2014/6/27]
+    </p>
+    <ul>
+        <li>添加上古神器.他们给你能力加成.</li>
+        <li>添加初级任务系统.</li>
+        <li>添加更多道具品质等级.</li>
+    </ul>
+    <p>
+        版本号 0.013 偶遇财宝箱 [2014/6/13]
+    </p>
+    <ul>
+        <li>添加财宝箱,每过一段时间就有可能发现.</li>
+        <li>减慢找到机械零件的速率.</li>
+        <li>有望修复游戏在IE8浏览器中的问题(不工作).</li>
+    </ul>
+    <p>
+        版本号 0.012 机械零件和声望 [2014/6/9]
+    </p>
+    <ul>
+        <li>添加首领阶级.</li>
+        <li>添加地牢.</li>
+        <li>添加机械零件.</li>
+        <li>添加游戏结局(现在你可以通关了).</li>
+        <li>添加'声望'系统.</li>
+        <li>调整怪物的经验和生命.</li>
+        <li>调整道具的CPS和消耗.</li>
+    </ul>
+    <p>
+        版本号 0.011 经验平衡 [2014/5/18]
+    </p>
+    <ul>
+        <li>修复遭遇战经验增加问题.</li>
+        <li>在商店面板增加ΔDPS栏.</li>
+        <li>增加首领遭遇战频率.</li>
+        <li>增加首领掉落.</li>
+        <li>修复导入存档问题.</li>
+    </ul>
+    <p>
+        版本号 0.010 可怜的道具 [2014/5/15]
+    </p>
+    <ul>
+        <li>增加许多道具品质等级.</li>
+        <li>调整角色能力显示.</li>
+        <li>增加道具缓存区保存最好的掉落道具.</li>
+        <li>调整首领遭遇战频率.</li>
+    </ul>
+    <p>
+        版本号 0.009 技能冷却 [2014/5/9]
+    </p>
+    <ul>
+        <li>添加角色技能冷却时间显示.</li>
+        <li>增加角色预设名.</li>
+        <li>防止通过作弊直接进入首领战.</li>
+        <li>修复角色页面商店冷却问题.</li>
+        <li>修复一些空参数.</li>
+    </ul>
+    <p>
+        版本号 0.008 一些调整和修复 [2014/5/7]
+    </p>
+    <ul>
+        <li>调整版本号和保存按钮到独立面板.</li>
+        <li>修复攻击按钮问题.</li>
+        <li>修复角色能力激活时消失的问题.</li>
+        <li>修复角色名字显示错误.</li>
+        <li>调整游戏平衡性.</li>
+        <li>刷新游戏商店不会直接进货.</li>
+        <li>刷新游戏不会再重置角色能力时间.</li>
+    </ul>
+    <p>
+        版本号 0.007 队伍建设和首领战 [2014/5/4]
+    </p>
+    <ul>
+        <li>取消道具等级限制,有什么穿什么.</li>
+        <li>重新调整道具品质对CPS的影响,低品质道具数值不会超过高品质道具.</li>
+        <li>增加角色类型.</li>
+        <li>增加队伍选择和角色命名.</li>
+        <li>增加角色能力.</li>
+        <li>增加队伍面板来减少面板切换.</li>
+        <li>添加首领遭遇战.</li>
+    </ul>
+    <p>
+        版本号 0.006 黄金共享与平衡性调整 [2014/4/16]
+    </p>
+    <ul>
+        <li>角色使用黄金共享.</li>
+        <li>怪物根据最高等级角色出现.</li>
+    </ul>
+    <p>
+        版本号 0.005 进度改变
+    </p>
+    <ul>
+        <li>增加道具商店进货时间.</li>
+        <li>修复一个道具掉落清理问题.</li>
+        <li>增加角色升级冷却时间.</li>
+        <li>提高道具购买价格,减少敌人掉落黄金.</li>
+    </ul>
+    <p>
+        版本号 0.004 许多改变
+    </p>
+    <ul>
+        <li>增加保存,自动保存,导入/导出和重置功能.</li>
+        <li>放弃道具升级/附魔功能.</li>
+        <li>增加遭遇战道具掉落.</li>
+        <li>为每个角色增加道具商店.</li>
+        <li>添加道具品质.</li>
+        <li>添加道具等级.</li>
+        <li>角色升级自动化.</li>
+        <li>放弃伤害/护甲/CPS光环.太混乱.</li>
+        <li>大量用户界面变更.</li>
+    </ul>
+    <p>
+        版本号 0.003 道具名称和后台进度修复
+    </p>
+    <ul>
+        <li>修复游戏页面在后台进度条冻结的问题.</li>
+        <li>修复高等级装备名称.</li>
+    </ul>
+    <p>
+        版本号 0.002 轻微改进
+    </p>
+    <ul>
+        <li>小问题修复.</li>
+    </ul>
+    <p>
+        版本号 0.001 可悲的半成品
+    </p>
+    <ul>
+        <li>初期测试版发布.</li>
+    </ul>
+</div>
+</div>
+</div>
+</td>
+<!-- Right side of the screen. -->
+<td style="vertical-align: top;min-width:600px;">
+    <div class="tabMenu">
+        <ul>
+            <li id="tabParty" class="selectedTab"><a href="#"
+                                                     onclick="Game.displayCharacter(-1); return false;">队伍</a>
+            </li>
+            <li id="tabChar0" style="display:none;"><a id="tabLink0" href="#"
+                                                       onclick="Game.displayCharacter(0); return false;"></a></li>
+            <li id="tabChar1" style="display:none;"><a id="tabLink1" href="#"
+                                                       onclick="Game.displayCharacter(1); return false;"></a></li>
+            <li id="tabChar2" style="display:none;"><a id="tabLink2" href="#"
+                                                       onclick="Game.displayCharacter(2); return false;"></a></li>
+            <li id="tabChar3" style="display:none;"><a id="tabLink3" href="#"
+                                                       onclick="Game.displayCharacter(3); return false;"></a></li>
+            <li id="tabChar4" style="display:none;"><a id="tabLink4" href="#"
+                                                       onclick="Game.displayCharacter(4); return false;"></a></li>
+            <li id="tabChar5" style="display:none;"><a id="tabLink5" href="#"
+                                                       onclick="Game.displayCharacter(5); return false;"></a></li>
+            <li id="tabChar6" style="display:none;"><a id="tabLink6" href="#"
+                                                       onclick="Game.displayCharacter(6); return false;"></a></li>
+        </ul>
+    </div>
+
+    <div class="tabContent">
+        <!-- ********************************************************************************* -->
+        <!-- Party                                                                             -->
+        <!-- ********************************************************************************* -->
+        <div id="party_section" class="characterDiv">
+            <div id="party_abilities_container"></div>
+            <div id="party_statistics_container"></div>
+            <div id="party_store_container"></div>
+        </div>
+
+        <!-- ********************************************************************************* -->
+        <!-- CHARACTER 0                                                                       -->
+        <!-- ********************************************************************************* -->
+        <div id="char0_section" class="characterDiv">
+            <div id="char0_title" class="sectionTitle">
+                <span id="char0_name">姓名</span>
+
+                <div id="char0_level" class="currentLevel">当前等级</div>
+            </div>
+
+            <div id="char0_ability_container"></div>
+            <div id="char0_statistics_container"></div>
+            <div id="char0_inventory_container"></div>
+            <div id="char0_store_container"></div>
+        </div>
+
+        <!-- ********************************************************************************* -->
+        <!-- CHARACTER 1 -->
+        <!-- ********************************************************************************* -->
+        <div id="char1_section" class="characterDiv">
+            <div id="char1_title" class="sectionTitle">
+                <span id="char1_name">姓名</span>
+
+                <div id="char1_level" class="currentLevel">当前等级</div>
+            </div>
+
+            <div id="char1_ability_container"></div>
+            <div id="char1_statistics_container"></div>
+            <div id="char1_inventory_container"></div>
+            <div id="char1_store_container"></div>
+        </div>
+
+        <!-- ********************************************************************************* -->
+        <!-- CHARACTER 2 -->
+        <!-- ********************************************************************************* -->
+        <div id="char2_section" class="characterDiv">
+            <div id="char2_title" class="sectionTitle">
+                <span id="char2_name">姓名</span>
+
+                <div id="char2_level" class="currentLevel">当前等级</div>
+            </div>
+
+            <div id="char2_ability_container"></div>
+            <div id="char2_statistics_container"></div>
+            <div id="char2_inventory_container"></div>
+            <div id="char2_store_container"></div>
+        </div>
+
+        <!-- ********************************************************************************* -->
+        <!-- CHARACTER 3 -->
+        <!-- ********************************************************************************* -->
+        <div id="char3_section" class="characterDiv">
+            <div id="char3_title" class="sectionTitle">
+                <span id="char3_name">姓名</span>
+
+                <div id="char3_level" class="currentLevel">当前等级</div>
+            </div>
+
+            <div id="char3_ability_container"></div>
+            <div id="char3_statistics_container"></div>
+            <div id="char3_inventory_container"></div>
+            <div id="char3_store_container"></div>
+        </div>
+
+        <!-- ********************************************************************************* -->
+        <!-- CHARACTER 4 -->
+        <!-- ********************************************************************************* -->
+        <div id="char4_section" class="characterDiv">
+            <div id="char4_title" class="sectionTitle">
+                <span id="char4_name">角色姓名</span>
+
+                <div id="char4_level" class="currentLevel">当前等级</div>
+            </div>
+
+            <div id="char4_ability_container"></div>
+            <div id="char4_statistics_container"></div>
+            <div id="char4_inventory_container"></div>
+            <div id="char4_store_container"></div>
+        </div>
+
+        <!-- ********************************************************************************* -->
+        <!-- CHARACTER 5 -->
+        <!-- ********************************************************************************* -->
+        <div id="char5_section" class="characterDiv">
+            <div id="char5_title" class="sectionTitle">
+                <span id="char5_name">角色姓名</span>
+
+                <div id="char5_level" class="currentLevel">当前等级</div>
+            </div>
+
+            <div id="char5_ability_container"></div>
+            <div id="char5_statistics_container"></div>
+            <div id="char5_inventory_container"></div>
+            <div id="char5_store_container"></div>
+        </div>
+
+        <!-- ********************************************************************************* -->
+        <!-- CHARACTER 6 -->
+        <!-- ********************************************************************************* -->
+        <div id="char6_section" class="characterDiv">
+            <div id="char6_title" class="sectionTitle">
+                <span id="char6_name">角色姓名</span>
+
+                <div id="char6_level" class="currentLevel">当前等级</div>
+            </div>
+
+            <div id="char6_ability_container"></div>
+            <div id="char6_statistics_container"></div>
+            <div id="char6_inventory_container"></div>
+            <div id="char6_store_container"></div>
+        </div>
+    </div>
+</td>
+</tr>
+</table>
+
+</div>
+
+<!-- ********************************************************************************* -->
+<!-- Party Creation -->
+<!-- ********************************************************************************* -->
+
+<div id="partyCreationDisabledBackground" class="disabledBackgroundDiv"></div>
+<div id="partyCreationDiv" class="partyCreationDiv">
+    <div style="width:900px;margin: 10px auto 5px;">
+        <div class="mainTitle">末日危机</div>
+        <div style="padding:5px;font-weight:bold;color:#800;">选择你的角色:</div>
+    </div>
+    <table id="partyButtonTable" class="partyButtonTable">
+    </table>
+    <div id="startQuestButtonDiv" style="text-align: center;"></div>
+</div>
+
+<div id="endGameDisabledBackground" class="disabledBackgroundDiv"></div>
+<div id="end_game_container" class="endGameDiv"></div>
+
+<script src="clickpocalypse104a.js?ver=20140715"></script>
+
+<script type="text/javascript">
+    // Attack a function to the onkeyup event so that we can switch tabs via the keyboard.
+    document.onkeyup = Game.handleKeyPress;
+
+    // Initialize things when the window has finished loading.
+    window.onload = function () {
+        Game.onLoad();
+        Game.setSelectedTabId('tabParty'); // Let the game know which tab is selected initially.
+    };
+</script>
+</body>
+
+
+<!-- Mirrored from minmaxia.com/clickpocalypse/ by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 05 Dec 2014 13:47:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=ISO-8859-1"><!-- /Added by HTTrack -->
+</html>

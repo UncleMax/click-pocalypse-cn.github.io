@@ -1,0 +1,1191 @@
+html {
+    overflow-y: scroll; /* force scroll bar so prevent re-layout of page. */
+}
+body {
+    /*font-family: "PT Sans", Arial, Helvetica, sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;*/
+    /*font-family: Verdana, Geneva, sans-serif;*/
+    font-size: 12px;
+    font-weight: normal;
+}
+
+div {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* **************************************************************************************** */
+/*                                     CLEAN TABLE                                          */
+/* **************************************************************************************** */
+
+.cleanTable {
+    margin-top: 15px;
+    width: 100%;
+}
+
+table {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+}
+
+caption {
+    padding: 0 0 5px 0;
+    font-size: 11px;
+    text-align: right;
+}
+
+.cleanTable th {
+    color: #345;
+    border-right: 1px solid #D5D5DA;
+    border-bottom: 1px solid #D5D5DA;
+    border-top: 1px solid #D5D5DA;
+    text-align: right;
+    padding: 6px 6px 6px 6px;
+    background: #EAEAF0;
+}
+
+.cleanTable th.noBackground {
+    text-align: left;
+    border-top: 0;
+    border-left: 0;
+    border-right: 1px solid #D5D5DA;
+    background: none;
+}
+
+.cleanTable td {
+    text-align: right;
+    border-right: 1px solid #D5D5DA;
+    border-bottom: 1px solid #D5D5DA;
+    background: #fff;
+    padding: 5px;
+    color: #345;
+}
+
+td.alt {
+    text-align: right;
+    background: #F5FAFA;
+}
+
+th.firstCol {
+    border-left: 1px solid #D5D5DA;
+    border-top: 0;
+    background-color: #fff;
+    text-align: left;
+    font-weight:normal;
+}
+
+.firstColumn {
+    border-left: 1px solid #D5D5DA;
+}
+
+th.firstColAlt {
+    border-left: 1px solid #D5D5DA;
+    border-top: 0;
+    background-color: #f5fafa;
+    text-align: left;
+
+    font-weight:normal;
+}
+
+td.firstCol {
+    border-left: 1px solid #D5D5DA;
+    border-top: 0;
+    background-color: #fff;
+    text-align: left;
+    font-weight:normal;
+}
+
+td.firstColAlt {
+    border-left: 1px solid #D5D5DA;
+    border-top: 0;
+    background-color: #f5fafa;
+    text-align: left;
+    font-weight:normal;
+}
+
+td.clearCell {
+    border: 0;
+    background-color: #f5fafa;
+}
+
+/* **************************************************************************************** */
+/*                                     BUY BUTTON                                           */
+/* button creator: http://www.cssbuttongenerator.com/                                       */
+/* **************************************************************************************** */
+
+.buyButton {
+    box-shadow: inset 0 1px 0 0 #ffffff;
+    background-color: #ededed;
+    text-indent: 0;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    color: #345;
+    font-style: normal;
+    height: 18px;
+    line-height: 18px;
+    min-width: 50px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buyButton:visited {
+    color: #345;
+}
+
+.buyButton:hover {
+    background-color: #dfdfdf;
+    cursor: pointer;
+}
+
+.buyButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.disabledBuyButton {
+    background-color: #CCC;
+    text-indent: 0;
+    border: 1px solid #AAA;
+    display: inline-block;
+    color: #777777;
+    font-style: normal;
+    height: 18px;
+    line-height: 18px;
+    min-width: 50px;
+    text-decoration: none;
+    text-align: center;
+    cursor: default;
+}
+
+.unaffordableBuyButton {
+    background-color: #CCC;
+    text-indent: 0;
+    border: 1px solid #AAA;
+    display: inline-block;
+    color: #BF3030;
+    font-style: normal;
+    height: 19px;
+    line-height: 18px;
+    min-width: 50px;
+    text-decoration: none;
+    text-align: center;
+    cursor: default;
+}
+
+/* **************************************************************************************** */
+/*                         START THE QUEST BUTTON                                           */
+/* button creator: http://www.cssbuttongenerator.com/                                       */
+/* **************************************************************************************** */
+
+.startQuestButton {
+    box-shadow: inset 0 1px 0 0 #DDAA44;
+    background-color: #FFCC88;
+    border-radius: 6px;
+    text-indent: 0;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    color: #444;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 50px;
+    line-height: 50px;
+    /*width: 196px;*/
+    text-decoration: none;
+    text-align: center;
+    /*text-shadow: 1px 1px 0 #ffffff;*/
+    margin: 15px auto;
+    cursor: pointer;
+
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.startQuestButton:hover {
+    background-color: #FFCC88;
+    cursor: pointer;
+}
+
+.startQuestButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.disabledStartQuestButton {
+    box-shadow: inset 0 1px 0 0 #ffffff;
+    background-color: #CCC;
+    border-radius: 6px;
+    text-indent: 0;
+    border: 1px solid #AAA;
+    display: inline-block;
+    color: #777777;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 50px;
+    line-height: 50px;
+    width: 196px;
+    text-decoration: none;
+    text-align: center;
+    /*text-shadow: 1px 1px 0 #ffffff;*/
+    margin: 15px auto;
+    cursor: default;
+}
+
+/* **************************************************************************************** */
+/*                         CHARACTER ABILITY BUTTON                                        */
+/* button creator: http://www.cssbuttongenerator.com/                                       */
+/* **************************************************************************************** */
+
+.characterAbilityButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #0B61A4;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #052C6E;
+    display: inline-block;
+    color: white;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 16px;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin: 15px auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.characterAbilityTableButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #0B61A4;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #052C6E;
+    display: inline-block;
+    color: white;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.characterAbilityButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.characterAbilityTableButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.disabledCharacterAbilityTableButton {
+    background-color: #CCC;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #AAA;
+    display: inline-block;
+    color: #777777;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 100%;
+    cursor: default;
+}
+
+.activeCharacterAbilityTableButton {
+    background-color: #BF3030;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #AAA;
+    display: inline-block;
+    color: #FFF;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 100%;
+    cursor: default;
+}
+
+/* **************************************************************************************** */
+/* Active Ability Div                                                                        */
+/* **************************************************************************************** */
+
+.activeAbility {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #A4A4BA;
+    background-color: #EAEAF0;
+    color: #444;
+}
+.activeAbilityName {
+    font-weight: bold;
+}
+.activeAbilityCountdown {
+    float: right;
+    text-align: center;
+}
+
+/* **************************************************************************************** */
+/*                                     TAB MENU                                             */
+/* **************************************************************************************** */
+
+.outerContainer {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+}
+
+.tabMenu li {
+    float: left;
+    background-color: #F5FAFA;
+    border: 1px solid #A4A4BA;
+    border-bottom-width: 0;
+    margin: 0;
+}
+
+.tabMenu a {
+    text-decoration: none;
+    display: block;
+    background-color: white;
+    padding: 5px;
+    color: #444;
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.tabMenu a:hover {
+    background: #EAEAF0;
+}
+
+.tabMenu .selectedTab {
+    border-color: #A4A4BA;
+}
+
+.tabMenu .selectedTab a {
+    position: relative;
+    top: 1px;
+    background-color: #F5FAFA;
+    color: black;
+    font-weight: bold;
+}
+
+.tabContent {
+    border: 1px solid #A4A4BA;
+    background-color: #F5FAFA;
+    clear: both;
+}
+
+/* **************************************************************************************** */
+/*                                                                                          */
+/* **************************************************************************************** */
+
+.mainTitle {
+    padding-left: 5px;
+    font-size: 18px;
+    color:#400;
+}
+
+.containerDiv {
+    color: #444;
+}
+
+.sectionDiv {
+    padding: 0;
+    margin: 5px;
+    background-color: #F5FAFA;
+    color: #444;
+}
+
+.sectionTitle {
+    font-weight: bold;
+    font-size: 12px;
+
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.sectionSubTitle {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.monsterName {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.bossJobTitleStoryline {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #BF3030;
+}
+
+.bossJobTitle {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #D4A017;
+}
+
+.bossMonsterName {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #D4A017;
+}
+
+.characterDiv {
+    padding: 5px;
+    margin: 5px 5px 5px;
+    background-color: #F5FAFA;
+    color: #444;
+}
+
+.clickableButton {
+    cursor: pointer;
+    color: black;
+}
+
+.nonClickableButton {
+    cursor: default;
+    color: #888;
+}
+
+td.itemValueBetter {
+    color: #008800;
+}
+
+td.itemValueWorse {
+    color: #BF3030;
+}
+
+td.itemQualityEmpty {
+    color: #6A6A6A;
+}
+
+td.itemQualityWretched {
+    color: #666;
+}
+td.itemQualityGarbage {
+    color: #470;
+}
+td.itemQualityPathetic {
+    color: #804;
+}
+td.itemQualityFlawed {
+    color: #208;
+}
+td.itemQualityLesser {
+    color: #305;
+}
+td.itemQualityInferior {
+    color: #090;
+}
+td.itemQualityPlain {
+    color: #004;
+}
+td.itemQualityCommon {
+    color: #964;
+}
+td.itemQualityStandard {
+    color: #099;
+}
+td.itemQualityRefined {
+    color: #449;
+}
+td.itemQualityPremium {
+    color: #705;
+}
+td.itemQualitySuperior {
+    color: #490;
+}
+td.itemQualityPristine {
+    color: #08A;
+}
+td.itemQualityPerfect {
+    color: #A40;
+}
+td.itemQualityFlawless {
+    color: #44A;
+}
+td.itemQualityHeroic {
+    color: #098;
+}
+td.itemQualityHistoric {
+    color: #907;
+}
+td.itemQualityFabled {
+    color: #24D;
+}
+td.itemQualityMythical {
+    color: #994;
+}
+td.itemQualitySublime {
+    color: #A66;
+}
+td.itemQualitySacred {
+    color: #0A4;
+}
+td.itemQualityGlorious {
+    color: #80E;
+}
+td.itemQualityDivine {
+    color: #F80;
+}
+
+td.itemQualityGodlike {
+    color: #490;
+    background-color: #FEF;
+}
+td.itemQualityImmortal {
+    color: #04A;
+    background-color: #FFA;
+}
+td.itemQualityEternal {
+    color: #D4D;
+    background-color: #CFC;
+}
+td.itemQualityEthereal {
+    color: #0CC;
+    background-color: #CFE;
+}
+td.itemQualityAstral {
+    color: #C07;
+    background-color: #CEF;
+}
+td.itemQualityCelestial {
+    color: #580;
+    background-color: #EEF;
+}
+td.itemQualityCosmic {
+    color: #00A;
+    background-color: #FFC;
+}
+td.itemQualityGalactic {
+    background-color: #A00;
+    color: #CFF;
+}
+td.itemQualityTranscendent {
+    background-color: #4A4;
+    color: #FFD;
+}
+
+td.itemQualityUnique {
+    color: #FFC;
+    background-color: #500;
+}
+
+.hoveredIndicator {
+    float: right;
+    width: 6px;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.statRow {
+    text-align: left;
+    margin-top: 5px;
+}
+
+.statLabel {
+    font-weight: bold;
+    display: inline-block;
+    width: 170px;
+    text-align: right;
+    color: #345;
+}
+
+.statValue {
+    font-weight: normal;
+    color: #345;
+}
+
+.attackButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #0B61A4;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #052C6E;
+    display: inline-block;
+    color: white;
+    font-size: 19pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.attackButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+
+.currentLevel {
+    float: right;
+    /*color: black;*/
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.combatProgressBar {
+    background-color: #EAEAF0;
+    border-radius: 3px;
+    padding: 5px;
+    width: 450px;
+    height: 30px;
+    border: 1px solid #888;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.combatProgressPercentage {
+    border-radius: 3px;
+    background-color: #BF3030;
+    height: 30px;
+}
+
+/* **************************************************************************************** */
+/* Save Button                                                                              */
+/* **************************************************************************************** */
+
+.buttonNoteDiv {
+    padding: 5px;
+    font-weight: normal;
+    text-align: center;
+    float: left;
+}
+
+.saveButtonContainer {
+    overflow: hidden; /* make the div respect the height of the floating upgrade buttons. */
+    padding:2px;
+    margin:0;
+}
+
+.exportImportSaveContainer {
+    display: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+    border: 1px solid #A4A4BA;
+    overflow: hidden; /* make the div respect the height of the floating upgrade buttons. */
+}
+
+.saveButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #0B61A4;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #052C6E;
+    display: inline-block;
+    color: white;
+    font-style: normal;
+    width: 100px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.saveButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Party Creation                                                                           */
+/* **************************************************************************************** */
+
+.partyCreationDiv {
+    display: none;
+    position: relative;
+    top: 15px;
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: 1px solid #345;
+    text-align: center;
+    z-index: 999;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.disabledBackgroundDiv {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.9;
+    background-color: #000;
+}
+
+.partyButtonTable {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 5px;
+}
+
+.partyButtonTable td {
+    border: 1px solid #345;
+    width: 350px;
+    text-align: left;
+    padding:5px;
+    cursor: pointer;
+}
+
+.unselectedPartyCharacterCell {
+    background-color: #F5FAFA;
+}
+
+.selectedPartyCharacterCell {
+    margin-left: 30px;
+    background-color: #0B61A4;
+    color: white;
+}
+
+
+
+.partyCheckbox {
+    float: left;
+}
+
+.partyCharacterContainer {
+    margin-left: 30px;
+}
+
+.partyCharacterDescriptionDiv {
+    font-weight: normal;
+}
+
+.partyCharacterNameDiv {
+    font-weight: bold;
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Boss                                                                                     */
+/* **************************************************************************************** */
+
+.bossLairButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #FFA500;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #D4A017;
+    display: inline-block;
+    color: #345;
+    font-size: 19pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.bossLairButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Dungeon                                                                                  */
+/* **************************************************************************************** */
+
+.dungeonStairsButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #776666;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #444444;
+    display: inline-block;
+    color: #ABC;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dungeonStairsButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Machine Part                                                                             */
+/* **************************************************************************************** */
+
+.takeMachinePartButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #44AA88;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #123;
+    display: inline-block;
+    color: #345;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.takeMachinePartButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Prestige                                                                                 */
+/* **************************************************************************************** */
+
+.endGameDiv {
+    display: none;
+    position: relative;
+    padding: 20px;
+    top: 15px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: 1px solid #345;
+    text-align: left;
+    z-index: 999;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
+.prestigeButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #4444EE;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #123;
+    /*display: inline-block;*/
+    display: block;
+    color: #BCD;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.prestigeButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Treasure Chest                                                                          */
+/* **************************************************************************************** */
+
+.openTreasureChestButton {
+    box-shadow: inset 0 1px 0 0 #F5FAFA;
+    background-color: #CC6600;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #123;
+    display: inline-block;
+    color: #BCD;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.openTreasureChestButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Artifact                                                                                 */
+/* **************************************************************************************** */
+
+.takeArtifactButton {
+    box-shadow: inset 0 1px 0 0 #9900EE;
+    background-color: #6600CC;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #ABC;
+    display: inline-block;
+    color: #BCD;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.takeArtifactButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Quest                                                                                    */
+/* **************************************************************************************** */
+
+.acceptQuestButton {
+    box-shadow: inset 0 1px 0 0 #0099EE;
+    background-color: #0066CC;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #ABC;
+    display: inline-block;
+    color: #BCD;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.acceptQuestButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.collectRewardButton {
+    box-shadow: inset 0 1px 0 0 #00CC77;
+    background-color: #00AA33;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #ABC;
+    display: inline-block;
+    color: #BCD;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.collectRewardButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Encountered Character                                                                    */
+/* **************************************************************************************** */
+
+.addToPartyButton {
+    box-shadow: inset 0 1px 0 0 #88EE00;
+    background-color: #44AA00;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #123;
+    display: inline-block;
+    color: #DEF;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.addToPartyButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.rejectCharacterButton {
+    box-shadow: inset 0 1px 0 0 #AA0000;
+    background-color: #880000;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #123;
+    display: inline-block;
+    color: #DEF;
+    font-size: 14pt;
+    font-style: normal;
+    width: 450px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.rejectCharacterButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+/* **************************************************************************************** */
+/* Party Management                                                                         */
+/* **************************************************************************************** */
+
+.addCharacterButton {
+    box-shadow: inset 0 1px 0 0 #88EE00;
+    background-color: #227700;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #123;
+    display: inline-block;
+    color: #DEF;
+    /*font-size: 14pt;*/
+    font-style: normal;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.addCharacterButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.removeCharacterButton {
+    box-shadow: inset 0 1px 0 0 #AA0000;
+    background-color: #440000;
+    border-radius: 3px;
+    text-indent: 0;
+    border: 1px solid #123;
+    display: inline-block;
+    color: #DEF;
+    /*font-size: 14pt;*/
+    font-style: normal;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.removeCharacterButton:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
